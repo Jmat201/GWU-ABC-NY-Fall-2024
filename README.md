@@ -1,77 +1,220 @@
-# GWU-ABC-NY-Fall-2024
-Business Practicum Project done for Agricultural Bank of China New York, in Fall 2024
+# SAR Generator using Gen-AI
+
+A sophisticated system for automatically generating Suspicious Activity Reports (SARs) using Generative AI, developed for the Agricultural Bank of China (ABC) New York Branch to enhance their compliance operations.
+
+## Project Overview
+
+This project addresses the critical challenge of automating Suspicious Activity Report generation through locally-hosted Generative AI models. The solution transforms a labor-intensive process that previously took between 2 hours to 2 days into a streamlined 30-minute operation, while achieving a substantial cost reduction from $75 to $20 per report.
+
+### Business Context
+- **Client**: Agricultural Bank of China (ABC), New York Branch
+- **Challenge**: Manual SAR creation process requiring 2-16 hours per report
+- **Previous Issues**: Cloud-based AI systems raising data privacy concerns
+- **Implementation Timeline**: Completed December 2024
+
+### Key Achievements
+- 70% reduction in operational costs
+- Enhanced data privacy through local deployment
+- Improved compliance efficiency
+- Client satisfaction scores up to 9/10
+
+## Technical Architecture
+
+### 1. Database Implementation
+#### PostgreSQL Setup
+- Vector search capability through pgvector
+- Optimized schema design for:
+  - Customer profiles
+  - Account management
+  - Transaction tracking
+  - Alert systems
+  - SAR narratives
+
+#### Security Configuration
+1. **TLS Encryption**
+   - Encrypted database connections
+   - Regular certificate updates
+   - Secure data transit protocols
+
+2. **Access Control**
+   - Role-based authentication
+   - Strong password policies
+   - Periodic credential rotation
+
+3. **Audit Systems**
+   - Comprehensive activity logging
+   - Automated alerts for suspicious actions
+   - Full accountability tracking
+
+### 2. AI Technology Stack
+
+#### Large Language Models (LLMs)
+1. **Supported Models**
+   - Llama 3.2-3B (Local deployment)
+   - Mistral NeMo 12B (Google Colab Pro)
+   - Danube 3-4B (Fallback option)
+
+2. **Model Selection Criteria**
+   - Parameter size (3-15B range)
+   - Resource requirements
+   - Performance metrics
+   - Reasoning capabilities
+
+#### Embedding Models
+- Vector representation implementation
+- Semantic relationship mapping
+- Integration with RAG systems
+
+#### Retrieval-Augmented Generation (RAG)
+1. **Components**
+   - Data retrieval system
+   - Embedding model integration
+   - Vector storage
+   - Generation pipeline
+
+2. **Benefits**
+   - Enhanced accuracy
+   - Regulatory compliance
+   - Contextual depth
+   - Efficient processing
+
+## Implementation Approaches
+
+### Approach 1: Template-Based Generation
+
+#### Process Flow
+1. **Data Collection**
+   - PostgreSQL database queries
+   - Alert narrative processing
+   - Document parsing
+
+2. **Document Structure**
+   - Introduction (static)
+   - Transaction details (dynamic)
+   - KYC and research findings (dynamic)
+   - SAR recommendations (dynamic)
+   - Conclusion (static)
+
+3. **Technologies Used**
+   - Mistral Nemo LLM
+   - Sentence transformers
+   - Zero-shot learning
+   - RAG implementation
+
+#### Performance Metrics
+- Execution time: 6-10 minutes
+- Client satisfaction: 9/10
+- Accuracy rating: High
+- Resource utilization: Optimized
+
+### Approach 2: Structured Narrative Generation
+
+#### Components
+1. **Data Processing**
+   - PDF guideline integration
+   - PostgreSQL transaction data
+   - Embedding model implementation
+   - Re-ranking system
+
+2. **Generation Process**
+   - Zero-shot techniques
+   - Chain-of-thought prompting
+   - Structured output formatting
+   - Quality validation
+
+#### Output Sections
+- Introduction
+- Customer Information
+- Patterns
+- Violations
+- Conclusion
+
+## Risk Management
+
+### Data Privacy Considerations
+1. **Training Data Risks**
+   - PII protection measures
+   - Data sanitization
+   - Access controls
+
+2. **User Interaction Security**
+   - Secure logging practices
+   - Cache management
+   - Access restriction
+
+3. **Storage Protection**
+   - Encryption protocols
+   - Authorization systems
+   - Audit mechanisms
+
+### Model Limitations
+1. **Hallucination Prevention**
+   - Structured prompting
+   - Validation pipelines
+   - Quality checks
+
+2. **Information Completeness**
+   - Comprehensive data gathering
+   - Cross-validation
+   - Accuracy verification
+
+## Business Value Proposition
+
+### Cost Analysis
+- Processing 10,000 SARs:
+  - Previous cost: $370,000 - $5,920,000
+  - New cost: Significantly reduced
+  - ROI: Substantial positive impact
+
+### Operational Benefits
+- Reduced manual workload
+- Improved accuracy
+- Enhanced compliance
+- Faster processing
+
+## Future Recommendations
+
+### Technical Enhancements
+1. **Computing Infrastructure**
+   - Utilize GWU's High Performance Computing
+   - Test 70B parameter models
+   - Optimize resource allocation
+
+2. **Model Optimization**
+   - Fine-tune query parameters
+   - Enhance embedding configurations
+   - Improve prompt engineering
+
+3. **Evaluation Framework**
+   - Implement automated metrics
+   - Enhance quality assessment
+   - Develop benchmarking system
+
+## Installation and Setup
+
+*Note: Detailed installation instructions and setup procedures are available in the project documentation.*
 
 
-# SAR-Generation
+### Model Performance
+Performance metrics for the implemented models are sourced from the original research:
 
-## Project Goals
-1. Identify and choose the optimal LLM model for local deployment without using cloud solution or cloud hosted services. 
-2. Performance Enhancement through integration with LlamaIndex and using RAG to search relevant document
-3. Set up a local MySQL or PostgreSQL server database with Jupyter Notebook or Google Colab 
-4. The LLM should extract data from this database to create detailed SAR narratives.
-5. Format and Design a Jupyter Notebook or Google Colab format for clear SAR narrative presentation.
-6. Analyze hallucination occurrences in narratives and how to mitigate them. 
-7. Fine-tuning the LLM model for optimal narrative generation.
+Mistral NeMo: Achieved 9/10 satisfaction score for comprehensive rule coverage (p.27)
+LLaMA model: Exceptional performance on cash structuring rules (p.27)
+Danube model: Effective for specific branch requirements (p.27)
 
+Note: Page numbers reference the original research document. For full methodology and implementation details, please refer to the complete research paper.
 
----
+## Authors and Contributors
 
-## Potential Roadblocks and Barriers to Success
-- Selecting and running a suitable LLM model locally.
-- Efficiently integrating GPT index and RAG for improved performance.
-- Handling the setup and connection between MySQL and Jupyter Notebook or Google Colab.
-- Ensuring the generated narratives meet industry standards for SARs.
-- Ensuring the generated narratives have minimal to no hallucination risk.
+### Development Team
+- Jeff
+- Mohanad
+- Nour
+- Chao
 
-## Preferred Methodology
-The project will be student-driven, with the team acting as consultants to develop, test, and optimize the SAR narrative generation tool. They will be responsible for all aspects of the development process, including model selection, data integration, and presentation format.
-
-## Data Requirements and Availability
-Students will use synthetic or anonymized data to simulate the SAR narrative generation process. Real-world datasets are not required for this project.
-
-## Analytics Requirements
-- Data engineering involving MySQL setup and integration with Jupyter Notebook or Google Colab.
-- Use of LLMs and additional tools like GPT index (LlamaIndex) and RAG.
-- Tuning and fine-tuning of LLM models for optimal results.
-
-## Preferred Tooling
-- **Programming languages:** Python and SQL.
-- **Collaboration tools:** GitHub, Jupyter Notebook or Google Colab.
-- **Database:** MySQL.
-- **AI Tools:** Selected GenAI LLM model, GPT Index (LlamaIndex), RAG.
+*Project completed: December 5, 2024*
 
 
-## Installation Instructions
-To enhance your development experience, it is recommended to install the `vuerd-vscode` extension for Visual Studio Code. This extension provides a visual editor for ER diagrams, which can be very useful for database design and management.
+## References
 
-### Steps to Install `vuerd-vscode` Extension:
-1. Open Visual Studio Code.
-2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or by pressing `Ctrl+Shift+X`.
-3. In the Extensions view search bar, type `vuerd-vscode`.
-4. Click on the extension named `vuerd-vscode` by `dineug`.
-5. Click the `Install` button.
-
-Alternatively, you can install the extension directly from the Visual Studio Code Marketplace by visiting [this link](https://marketplace.visualstudio.com/items?itemName=dineug.vuerd-vscode).
-
----
-
-### Linking to Google Colab and Saving to GitHub
-
-#### Linking to Google Colab:
-1. **Open Google Colab:**
-   Go to [Google Colab](https://colab.research.google.com/).
-   You can simply go to Google Colab and you can choose 'GitHub' on the box which you can see when you just go to the Colab site and login. 
-   Colab will automatically redirect you to github in order to authorize your github account. Then you can choose repository to use at Google Colab!
-
-2. **Open a Notebook:**
-   You can either create a new notebook or open an existing one.
-
-3. **Mount Google Drive:**
-   To access files from your Google Drive, run the following code in a Colab cell:
-   ```python
-   from google.colab import drive
-   drive.mount('/content/drive')
-
-4. **Saving to GitHub:**
-
-
+For detailed technical specifications and implementation details, please refer to the project documentation.
